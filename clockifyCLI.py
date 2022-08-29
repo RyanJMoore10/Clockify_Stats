@@ -18,36 +18,21 @@ daterange = [fromdate, todate]
 consultant_df = pd.DataFrame(
     data= {
         'API Key': [
-        'NjgzYjZmODUtZmQwOC00OWNiLWE2N2QtYTU3OTNlYjhiZjA0',
-        'MTllMGE3ZGUtNzdlNS00OTJmLWEwNGQtOGE3N2NiOWFlMmZm',
-        'MGE1YmU3NzgtNGEyMi00MDdkLTgwMmMtMGQ5MWY2OWY3Mjhj',
-        'ZmQ4M2UwNTgtNzVkZC00NTgwLTgyZjktZjc3ZmYyN2U3MDA0',
-        'NDQ3NTUwY2YtMjNkZi00YjQ2LThkNTMtZDhlY2Y0NzYyMTQ4',
-        'YWY1MTMxYWItZGVjNC00YWJhLWE2MjgtMmQxZDM1ZThiYmYw'
+        '############################'
         ],
         'ID': [
-        '617ff508d96e4e121a93f17a',
-        '60aeec0f215fef1f3a4e0f58',
-        '61d5ddc696aafe5141d19e2f',
-        '6238b01a3e89a17fb517d7dd',
-        '62558a0a5daa063d7fc96423',
-        '62263af2473a946e318e9c2a'
+        '############################'
         ]
         },
     index= [
-        'Chris',
-        'Ryan',
-        'Gerry',
-        'Innes',
-        'Scott',
-        'Brennan'
+        '############# Name Here ###############'
     ]
 )
 
 ############################################################################################
 
 print('--------------------------------------------------------------------------------')
-print('WFI Consulting Hours Summary' +f"\n From: {str(fromdate)}" + f"\n To: {str(todate)}")
+print('Consulting Hours Summary' +f"\n From: {str(fromdate)}" + f"\n To: {str(todate)}")
 print('--------------------------------------------------------------------------------')
 
 ############################################################################################
@@ -94,7 +79,7 @@ def summary_report(consultant_name):
     
     print('--------------------------------------------------------------------------------')
 
-def detailed_report(consultant_name='Ryan', month='01', length='31'):
+def detailed_report(consultant_name='#####', month='01', length='31'):
     '''
     Downloads a detailed report (csv) for each person in consultant_df.
 
@@ -132,16 +117,12 @@ def detailed_report(consultant_name='Ryan', month='01', length='31'):
     )
     resp_text = detailed.text
 
-    with open(f"C:\\Users\\mryan\\Downloads\\Detailed_Report_{month}_2022_{consultant_name}.csv", "w") as file:
+    with open(r"####### File Path###########\Detailed_Report_{month}_2022_{consultant_name}.csv", "w") as file:
         file.write(resp_text)
         # print(resp_text)
 
 for i in [
-        'Chris',
-        'Ryan',
-        'Gerry',
-        'Innes',
-        'Scott',
-        'Brennan']:
+        '#######'
+        ]:
         detailed_report(i,'06','30')
         summary_report(i)
